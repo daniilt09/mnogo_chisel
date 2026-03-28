@@ -1,10 +1,9 @@
 import collections
 import sys
-import heapq
+
 sys.setrecursionlimit(9999999)
 
 bilo = []
-count = 0
 top = []
 bilos = set()
 
