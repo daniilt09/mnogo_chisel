@@ -1,23 +1,6 @@
 import collections
-import sys
-
-sys.setrecursionlimit(9999999)
-
-bilo = []
-top = []
-bilos = set()
 
 n = int(input())
-
-
-def proverka(a, b):
-    c1, c2 = [0] * 10, [0] * 10
-    for d in str(a):
-        c1[int(d)] += 1
-    for d in str(b):
-        c2[int(d)] += 1
-    return sum(abs(c1[i] - c2[i]) for i in range(10)) == 2
-
 
 m = int("1" + "0" * n) - 1
 prost = [q for q in range(m)]
@@ -49,6 +32,7 @@ for mask in buckets:
                 sosedi[nodes[j]].append(nodes[i])
 
 print(len(sosedi))
+
 
 def poisk(sosedi, prost):
     bilo = []
@@ -89,6 +73,7 @@ def poisk(sosedi, prost):
         bilo = next_bilo[:shirina]
 
     return top
+
 
 top = poisk(sosedi, prost)
 
